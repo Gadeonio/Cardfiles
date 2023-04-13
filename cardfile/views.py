@@ -1,33 +1,34 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-'''
-
-class Genre(ListView):
-    model = models.Genres
+from cardfile.models import Genre,Composer,AuthorOfText,Performer,Artwork,Performance,Record
 
 
-class Composer(ListView):
-    model = Composers
+class GenreView(ListView):
+    model = Genre
 
 
-class AuthorOfText(ListView):
-    model = AuthorsOfText
+class ComposerView(ListView):
+    model = Composer
 
 
-class Performer(ListView):
-    model = Performers
+class AuthorOfTextView(ListView):
+    model = AuthorOfText
 
 
-class Artwork(ListView):
-    model = Artworks
+class PerformerView(ListView):
+    model = Performer
 
 
-class Performance(ListView):
-    model = Performances
+class ArtworkView(ListView):
+    model = Artwork
 
 
-class Record(ListView):
-    model = Records
-'''
-# Create your views here.
+class PerformanceView(ListView):
+    model = Performance
+
+
+class RecordView(ListView):
+    model = Record
+
