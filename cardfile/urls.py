@@ -1,17 +1,18 @@
 from django.contrib import admin
 from django.urls import path
 
-from cardfile.views import ComposerView, RecordView, GenreView, ArtworkView, PerformerView, PerformanceView, AuthorOfTextView
+from cardfile.views import ComposerView, RecordView, GenreView, ArtworkView, PerformerView, PerformanceView, \
+    AuthorOfTextView, BaseView
 
-appname = "cardfile"
+app_name = "cardfile"
 
 urlpatterns = [
-    path('/', ComposerView.as_view()),
-    path('composer/', ComposerView.as_view()),
-    path('record/', RecordView.as_view()),
-    path('genre/', GenreView.as_view()),
-    path('artwork/', ArtworkView.as_view()),
-    path('performer/', PerformerView.as_view()),
-    path('performance/', PerformanceView.as_view()),
-    path('author_of_text/', AuthorOfTextView.as_view()),
+    path('', BaseView.as_view(), name="base"),
+    path('composer/', ComposerView.as_view(), name="composer"),
+    path('record/', RecordView.as_view(), name="record"),
+    path('genre/', GenreView.as_view(), name="genre"),
+    path('artwork/', ArtworkView.as_view(), name="artwork"),
+    path('performer/', PerformerView.as_view(), name="performer"),
+    path('performance/', PerformanceView.as_view(), name="performance"),
+    path('author_of_text/', AuthorOfTextView.as_view(), name="author_of_text"),
 ]
