@@ -5,6 +5,22 @@ from django.views.generic import ListView, DetailView, TemplateView
 from cardfile.models import Genre,Composer,AuthorOfText,Performer,Artwork,Performance,Record
 
 
+'''class NothingMixin:
+    nothing = "Nothing"
+
+
+class NaitonMixin:
+    name = "Naiton"
+
+
+class DethklokMixin(NothingMixin, NaitonMixin):
+    pass
+
+
+class MetallocalypsMixin(DethklokMixin):
+    pass
+
+'''
 class TemplateNameSuffixMixin:
     template_name_suffix: str = ""
 
@@ -28,35 +44,39 @@ class NavMixin:
         return self.navs
 
 
-class BaseView(NavMixin, TemplateNameSuffixMixin, TemplateView):
+class MainMixin(NavMixin, TemplateNameSuffixMixin):
+    pass
+
+
+class BaseView(MainMixin, TemplateView):
     template_name = "cardfile/base.html"
 
 
-class GenreView(NavMixin, TemplateNameSuffixMixin, ListView):
+class GenreView(MainMixin, ListView):
     model = Genre
 
 
-class ComposerView(NavMixin, TemplateNameSuffixMixin, ListView):
+class ComposerView(MainMixin, ListView):
     model = Composer
 
 
-class AuthorOfTextView(NavMixin, TemplateNameSuffixMixin, ListView):
+class AuthorOfTextView(MainMixin, ListView):
     model = AuthorOfText
     template_name = 'cardfile/author_of_text.html'
 
 
-class PerformerView(NavMixin, TemplateNameSuffixMixin, ListView):
+class PerformerView(MainMixin, ListView):
     model = Performer
 
 
-class ArtworkView(NavMixin, TemplateNameSuffixMixin, ListView):
+class ArtworkView(MainMixin, ListView):
     model = Artwork
 
 
-class PerformanceView(NavMixin, TemplateNameSuffixMixin, ListView):
+class PerformanceView(MainMixin, ListView):
     model = Performance
 
 
-class RecordView(NavMixin, TemplateNameSuffixMixin, ListView):
+class RecordView(MainMixin, ListView):
     model = Record
 
