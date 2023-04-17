@@ -34,5 +34,5 @@ class Performance(models.Model):
 
 class Record(models.Model):
     name = models.CharField(max_length=char_max_length)
-    performers = models.ManyToManyField(Performance)
+    performances = models.ManyToManyField(Performance)
 
