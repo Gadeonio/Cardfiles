@@ -32,7 +32,7 @@ class PerformerFactory(DjangoModelFactory):
     name = factory.Faker('name')
 
 
-class ArtworkFactory(Factory):
+class ArtworkFactory(DjangoModelFactory):
     class Meta:
         model = Artwork
 
