@@ -1,0 +1,17 @@
+{% load getattribute %}
+<table>
+    <thead>
+        <tr>
+            <td>Произведение</td>
+            <td>Исполнители</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.artworks }}</td>
+                <td>{% for performer in object.performers.all %}<br>{{ performer }}{% empty %}Информации не будет{% endfor %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+{% load getattribute %}
+<table>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Автор текста</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}
+                <td>{{ object.name }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

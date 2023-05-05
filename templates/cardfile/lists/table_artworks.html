@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Название</td>
+            <td>Композиторы</td>
+            <td>Жанры</td>
+            <td>Авторы текста</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}
+                <td>{{ object.name }}</td>
+                <td>{% for composer in object.composers.all %}      <br>    {{ composer }}{% empty %}Информации не будет  {% endfor %}    </td>
+                <td>{% for genre in object.genres.all %}            <br>    {{ genre }}   {% empty %}Информации не будет  {% endfor %}    </td>
+                <td>{% for author in object.authors_of_text.all %}  <br>    {{ author }}  {% empty %}Информации не будет  {% endfor %}    </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
