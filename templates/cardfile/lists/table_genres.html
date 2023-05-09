@@ -10,7 +10,7 @@
         {% for object in object_list %}
             <tr>
                 <td>{{ forloop.counter }}
-                <td>{{ object.name }}</td>
+                <td><a href="{% url 'cardfile:genre_detail' object.pk %}">{{ object.name }}</a></td>
             </tr>
         {% endfor %}
     </tbody>

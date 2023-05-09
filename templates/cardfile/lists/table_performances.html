@@ -9,7 +9,7 @@
     <tbody>
         {% for object in object_list %}
             <tr>
-                <td>{{ object.artworks }}</td>
+                <td><a href="{% url 'cardfile:performance_detail' object.pk %}">{{ object.artworks }}</a></td>
                 <td>{% for performer in object.performers.all %}<br>{{ performer }}{% empty %}Информации не будет{% endfor %}</td>
             </tr>
         {% endfor %}

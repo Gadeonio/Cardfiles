@@ -10,7 +10,7 @@
         {% for object in object_list %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ object.name }}</td>
+                <td><a href="{% url 'cardfile:record_detail' object.pk %}">{{ object.name }}</a></td>
                 <td>{% for performance in object.performances.all %}<br>{{ performance }}{% empty %}Информации не будет{% endfor %}</td>
             </tr>
         {% endfor %}

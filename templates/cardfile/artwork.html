@@ -1,4 +1,5 @@
 {% extends "cardfile/base.html" %}
 {% block table %}
     {% include "cardfile/lists/table_artworks.html" %}
+    <a href="{% url 'cardfile:artwork_create' %}">Добавить произведение</a>
 {% endblock %}

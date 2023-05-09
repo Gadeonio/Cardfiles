@@ -1,0 +1,12 @@
+{% extends "cardfile/base.html" %}
+{% block table %}
+    <div class="alert alert-danger">
+        Вы действительно хотите удалить данные "{{ object }}"
+    </div>
+    <form method="post">{% csrf_token %}
+        <button type="submit" class="btn btn-danger">
+            Да
+        </button>
+        <a href="{% url 'cardfile:composer' %}" class="btn btn-success">Нет</a>
+    </form>
+{% endblock %}

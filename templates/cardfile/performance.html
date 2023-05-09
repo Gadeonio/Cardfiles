@@ -1,4 +1,5 @@
 {% extends "cardfile/base.html" %}
 {% block table %}
     {% include "cardfile/lists/table_performances.html" %}
+    <a href="{% url 'cardfile:performance_create' %}">Добавить исполнение</a>
 {% endblock %}

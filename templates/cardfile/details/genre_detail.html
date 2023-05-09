@@ -1,0 +1,5 @@
+{% extends "cardfile/base.html" %}
+{% block table %}
+    <a href="{% url 'cardfile:genre_update' object.pk %}">Изменить</a>
+    <a href="{% url 'cardfile:genre_delete' object.pk %}">Удалить</a>
+{% endblock %}

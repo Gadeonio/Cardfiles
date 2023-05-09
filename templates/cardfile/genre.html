@@ -1,4 +1,5 @@
 {% extends "cardfile/base.html" %}
 {% block table %}
     {% include "cardfile/lists/table_genres.html" %}
+    <a href="{% url 'cardfile:genre_create' %}">Добавить жанр</a>
 {% endblock %}

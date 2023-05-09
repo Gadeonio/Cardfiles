@@ -12,7 +12,7 @@
         {% for object in object_list %}
             <tr>
                 <td>{{ forloop.counter }}
-                <td>{{ object.name }}</td>
+                <td><a href="{% url 'cardfile:artwork_detail' object.pk %}">{{ object.name }}</a></td>
                 <td>{% for composer in object.composers.all %}      <br>    {{ composer }}{% empty %}Информации не будет  {% endfor %}    </td>
                 <td>{% for genre in object.genres.all %}            <br>    {{ genre }}   {% empty %}Информации не будет  {% endfor %}    </td>
                 <td>{% for author in object.authors_of_text.all %}  <br>    {{ author }}  {% empty %}Информации не будет  {% endfor %}    </td>
